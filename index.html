@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="css/main.css">
+<title>Weather API Project</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-- defer means that we are waiting for the entire html page to load before executing the JS -->
+<script src="js/main.js" defer></script>
+</head>
+<body class="top-padding">
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 center">
+     <!--Using The DOM to Grab Form Data-->
+                <form name="weatherData" id="weatherDataForm">
+                    <label for="city" class="bold"></label>
+                    <input type="text" name="city" id="city" placeholder="Search by city name">
+<!-- 
+                    <label for="zip" class="bold">Zip</label>
+                    <input type="number" name="zip" id="zip"> -->
+                 
+                    <div class="top-padding">
+                        <button class="btn btn-outline-dark btn-warning btn-margin" Onclick="load_data()" return false;>Get Forecast</button>
+                        <!-- <button class="btn btn-outline-dark btn-margin" Onclick="clear_data()"return false;>Clear Data</button>
+                        <section class="list-group padding"> -->
+                    </div>            
+
+                </form>
+            </div>
+        </div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Empty div for spacing on left -->
+            <div class="col-12 col-md-4"></div>
+
+
+            <div class="col-12 col-md-4 bg-image table-wrap">
+                <table class="table table-borderless" id="weather-data-table">
+                <!-- <table class="table table-striped table-dark table-hover" id="weather-data-table"> -->
+                    <thead>
+                        
+                        <!-- Empty Spot for City Name -->
+                        <tr>
+                            <td class="fs-1 text-center top-padding" id="location"></th>                        
+                        </tr>   
+
+                        
+                        <!-- Current Temp Label -->
+                        <!-- <div class="row mt-5"> -->
+                        <tr>
+                            <th class="fs-2 table-dark">Current Temp</th>
+                        </tr>
+                 
+                        
+
+
+                        <!-- Empty spot for Current Temp Data -->
+                        <div>
+                        <tr>
+                            <td class="fs-2 table-dark" id="current_temp"></th>
+                        </tr>
+                        </div>
+
+
+                        <!-- Insert Empty Row for legibility -->
+                        <div>
+                            <tr>
+                                <td id="blank_row"></th>
+                            </tr>
+                        </div>
+
+
+                        <!-- High Label -->
+                        <tr>
+                            <th class="fs-2 table-dark">High</th>
+                        </tr>
+
+
+                        <!-- Empty Spot for High Temp Data -->
+                        <tr>
+                            <td class="fs-2 table-dark" id="high_temp"></th>
+                        </tr>
+
+
+                        <!-- Insert Empty Row for legibility -->
+                        <div>
+                            <tr>
+                                <td id="blank_row"></th>
+                            </tr>
+                        </div>
+
+
+                        <!-- Low Label -->
+                        <tr>
+                            <th class="fs-2 table-dark">Low</th>
+                        </tr>
+
+                        <!-- Empty Spot for Low Temp Data -->
+                        <tr>
+                            <td class="fs-2 table-dark" id="low_temp"></th>
+                        </tr>
+
+
+                        <!-- Insert Empty Row for legibility -->
+                        <div>
+                            <tr>
+                                <td id="blank_row"></th>
+                            </tr>
+                        </div>                      
+
+
+                        <!-- Forecast Label -->
+                        <tr>
+                            <th class="fs-2 table-dark">Forecast</th>
+                        </tr>
+
+
+                        <!-- Empty Spot for Forecast Data -->
+                        <tr>
+                            <td class="fs-2 table-dark" id="forecast"></th>
+                        </tr>
+
+
+                        <!-- Insert Empty Row for legibility -->
+                        <div>
+                            <tr>
+                                <td id="blank_row"></th>
+                            </tr>
+                        </div>                        
+
+
+                        <!-- Humidity Label -->
+                        <tr>
+                            <th class="fs-2 table-dark">Humidity</th>
+                        </tr>
+
+                        <!-- Empty Spot for Humidity Data -->
+                        <tr>
+                            <td class="fs-2 table-dark" id="humidity"></th>
+                        </tr>
+
+
+                        <!-- <tr>
+                            <td class="weather-icon" id="icon"><img src="images/icons/unknown.png" /></td>
+                        </tr> -->
+
+
+
+                    </thead> 
+                    <tbody class="weather-data" id="weather-data"></tbody>        
+                </table>
+    </div>  
+
+    <!-- Empty div for spacing on right -->
+    <div class="col-12 col-md-4"></div>
+
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+</html>
