@@ -2,7 +2,7 @@ const apiCity ='https://api.openweathermap.org/data/2.5/weather?q=';
 const apiZip = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const country = 'US';
 const city = '${city}';
-const apiKey = '&appid=029f84240b76719f270b26552323e1a2';
+const apiKey = '&appid=[INSERT API KEY HERE]';
 const unit = '&units=imperial';
 
 
