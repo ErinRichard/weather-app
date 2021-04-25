@@ -131,4 +131,5 @@ const clearTable = () => {
     document.getElementById("low_temp").innerHTML = '';
     document.getElementById("forecast").innerHTML = '';
     document.getElementById("humidity").innerHTML = '';
+    document.getElementById("icon").innerHTML = '';
 }
