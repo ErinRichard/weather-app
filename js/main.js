@@ -1,8 +1,30 @@
+const apiCity ='https://api.openweathermap.org/data/2.5/weather?q=';
+const apiZip = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+const country = 'US';
+const city = '${city}';
+const apiKey = '&appid=029f84240b76719f270b26552323e1a2';
+const unit = '&units=imperial';
+
+
 const getData = async (city) => {
-    let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=029f84240b76719f270b26552323e1a2`)
-  
-    console.log(response.data) 
-    return response.data
+    // const setup = () => {
+    let urlCity = apiCity + city + unit + apiKey;
+    let urlZip = apiZip + city + unit + apiKey;
+    
+    console.log(urlCity)
+    console.log(urlZip)
+
+    if (isNaN(`${city}`)){
+        let response = await axios.get(urlCity)
+        console.log(response.data)
+        return response.data
+
+    } else {
+        let response = await axios.get(urlZip)
+        console.log(response.data)
+        return response.data
+        }
+
 }
 
 
@@ -70,21 +92,6 @@ const createHumidity = ( humidity ) => {
     document.getElementById("humidity").insertAdjacentHTML('beforeend', html)
 }
 
-// const createIcon = () => {
-//     let locationIcon = document.querySelector('.weather-icon');
-//     const html = weather[0].`${icon}`;
-//     console.log({icon})
-//     locationIcon.innerHTML = `<img src="images/icons/${icon}.png"></img>`
-// }
-
-
-// Create icon variable and function to insert into HTML table
-// const createIcon = ( weather ) => {
-
-    // const html = `<img src="https://openweathermap.org/img/wn/${
-        // weather[0]['icon']}@2x.png" alt="current conditions icon">`
-
-  
 
 // Function to Load the API Data and Display to HTML
 const load_data = async () => {
@@ -107,7 +114,12 @@ const load_data = async () => {
     createLowTemp(Math.round(user_city.main['temp_min'])+ '&#8457')
     createForecast(user_city.weather[0]['description'])
     createHumidity(user_city.main['humidity']+'%')
-    // createIcon(user_city.weather[0]['icon'])
+  
+    // Insert Weather Icon
+    let locationIcon = document.querySelector('.weather-icon');
+    const {icon} = user_city.weather[0];
+    console.log({icon})
+    locationIcon.innerHTML = `<img src="../images/icons/${icon}.png">`
 }
 
 

@@ -23,13 +23,13 @@
      <!--Using The DOM to Grab Form Data-->
                 <form name="weatherData" id="weatherDataForm">
                     <label for="city" class="bold"></label>
-                    <input type="text" name="city" id="city" placeholder="Search by city name">
+                    <input type="text" name="city" id="city" placeholder="Search by city name or zip code">
 <!-- 
                     <label for="zip" class="bold">Zip</label>
                     <input type="number" name="zip" id="zip"> -->
                  
                     <div class="top-padding">
-                        <button class="btn btn-outline-dark btn-warning btn-margin" Onclick="load_data()" return false;>Get Forecast</button>
+                        <button class="btn btn-warning button-outline-warning btn-margin" Onclick="load_data()" return false;>Get Forecast</button>
                         <!-- <button class="btn btn-outline-dark btn-margin" Onclick="clear_data()"return false;>Clear Data</button>
                         <section class="list-group padding"> -->
                     </div>            
@@ -56,10 +56,9 @@
                         </tr>   
 
                         
-                        <!-- Current Temp Label -->
-                        <!-- <div class="row mt-5"> -->
-                        <tr>
-                            <th class="fs-2 table-dark">Current Temp</th>
+                        <!-- Current Temp Label -->                    
+                        <tr class="color">
+                            <th class="fs-2">Current Temp</th>
                         </tr>
                  
                         
@@ -67,8 +66,8 @@
 
                         <!-- Empty spot for Current Temp Data -->
                         <div>
-                        <tr>
-                            <td class="fs-2 table-dark" id="current_temp"></th>
+                        <tr class="color">
+                            <td class="fs-2" id="current_temp"></th>
                         </tr>
                         </div>
 
@@ -82,14 +81,14 @@
 
 
                         <!-- High Label -->
-                        <tr>
-                            <th class="fs-2 table-dark">High</th>
+                        <tr class="color">
+                            <th class="fs-2">High</th>
                         </tr>
 
 
                         <!-- Empty Spot for High Temp Data -->
-                        <tr>
-                            <td class="fs-2 table-dark" id="high_temp"></th>
+                        <tr class="color">
+                            <td class="fs-2" id="high_temp"></th>
                         </tr>
 
 
@@ -102,13 +101,13 @@
 
 
                         <!-- Low Label -->
-                        <tr>
-                            <th class="fs-2 table-dark">Low</th>
+                        <tr class="color">
+                            <th class="fs-2">Low</th>
                         </tr>
 
                         <!-- Empty Spot for Low Temp Data -->
-                        <tr>
-                            <td class="fs-2 table-dark" id="low_temp"></th>
+                        <tr class="color">
+                            <td class="fs-2" id="low_temp"></th>
                         </tr>
 
 
@@ -121,16 +120,19 @@
 
 
                         <!-- Forecast Label -->
-                        <tr>
-                            <th class="fs-2 table-dark">Forecast</th>
+                        <tr class="color">
+                            <th class="fs-2">Forecast</th>
                         </tr>
 
 
                         <!-- Empty Spot for Forecast Data -->
-                        <tr>
-                            <td class="fs-2 table-dark" id="forecast"></th>
+                        <tr class="color">
+                            <td class="fs-2" id="forecast"></th>
                         </tr>
 
+                        <tr class="color">
+                            <td class="weather-icon" id="icon"><img src="" /></td>
+                        </tr>
 
                         <!-- Insert Empty Row for legibility -->
                         <div>
@@ -141,19 +143,14 @@
 
 
                         <!-- Humidity Label -->
-                        <tr>
-                            <th class="fs-2 table-dark">Humidity</th>
+                        <tr class="color">
+                            <th class="fs-2">Humidity</th>
                         </tr>
 
                         <!-- Empty Spot for Humidity Data -->
-                        <tr>
-                            <td class="fs-2 table-dark" id="humidity"></th>
+                        <tr class="color">
+                            <td class="fs-2" id="humidity"></th>
                         </tr>
-
-
-                        <!-- <tr>
-                            <td class="weather-icon" id="icon"><img src="images/icons/unknown.png" /></td>
-                        </tr> -->
 
 
 
